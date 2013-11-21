@@ -1,0 +1,5 @@
+_assetic:
+    resource: .
+    type: assetic
+_app:
+    resource: /home/likewise-open/SIFAST/yassine.dammak/workspace/jobeet/app/config/routing_dev.yml

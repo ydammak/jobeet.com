@@ -1,0 +1,56 @@
+ens_jobeet:
+    resource: "@EnsJobeetBundle/Resources/config/routing.yml"
+    prefix:   /
+    
+EnsJobeetBundle_job:
+    resource: "@EnsJobeetBundle/Resources/config/routing/job.yml"
+    prefix: /job
+
+ens_jobeet_homepage:
+    pattern:  /hello/{name}
+    defaults: { _controller: EnsJobeetBundle:Default:index }
+
+
+admin:
+    resource: '@SonataAdminBundle/Resources/config/routing/sonata_admin.xml'
+    prefix: /admin
+ 
+_sonata_admin:
+    resource: .
+    type: sonata_admin
+    prefix: /admin
+    
+ibw_jobeet:
+    resource: "@IbwJobeetBundle/Resources/config/routing.yml"
+    prefix:   /
+
+ibw_job:
+    pattern:  /
+    defaults: { _controller: "IbwJobeetBundle:Job:index" }
+
+ibw_job_show:
+    pattern:  /{id}/show
+    defaults: { _controller: "IbwJobeetBundle:Job:show" }
+
+ibw_job_new:
+    pattern:  /new
+    defaults: { _controller: "IbwJobeetBundle:Job:new" }
+
+ibw_job_create:
+    pattern:  /create
+    defaults: { _controller: "IbwJobeetBundle:Job:create" }
+    requirements: { _method: post }
+
+ibw_job_edit:
+    pattern:  /{id}/edit
+    defaults: { _controller: "IbwJobeetBundle:Job:edit" }
+
+ibw_job_update:
+    pattern:  /{id}/update
+    defaults: { _controller: "IbwJobeetBundle:Job:update" }
+    requirements: { _method: post|put }
+
+ibw_job_delete:
+    pattern:  /{id}/delete
+    defaults: { _controller: "IbwJobeetBundle:Job:delete" }
+    requirements: { _method: post|delete }
